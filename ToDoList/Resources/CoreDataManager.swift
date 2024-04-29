@@ -72,13 +72,6 @@ class CoreDataManager {
         fetchRequest.predicate = predicate
         
         do {
-//            let fetchedTasks = try context.fetch(fetchRequest)
-//            for task in fetchedTasks {
-//                task.completed = !task.completed
-//                if task.completed {
-//                    task.completedOn = Date()
-//                }
-//            }
             if let fetchedTask = try
                 context.fetch(fetchRequest).first(where: { $0.id == id }) {
                 fetchedTask.completed = !fetchedTask.completed
